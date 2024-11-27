@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <title>TriFoxie</title>
+    <style>
+        :root {
+            --dark_background_pink: #460046;
+
+            --dark_text_pink: #ff90ff;
+            --dark_text_pink_alt: #994f99;
+
+            background-color: var(--dark_background_pink);
+            color: var(--dark_text_pink);
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            width: 94%;
+            padding: 1% 3%;
+            backdrop-filter: blur(8px);
+            text-align: right;
+        }
+        #left_menu {
+            position: fixed;
+            top: 60%;
+            left: 0;
+            z-index: 998;
+            width: 10%;
+            text-align: left;
+            padding: 0% 3%;
+        }
+        #right_menu {
+            position: fixed;
+            top: 60%;
+            right: 0;
+            z-index: 997;
+            width: 10%;
+            text-align: right;
+            padding: 0% 3%;
+        }
+        #content {
+            width: 60%;
+            margin: 10% 0px;
+            padding: 0px 20%;
+            text-align: left;
+        }
+        .title{
+            font-weight: bolder;
+            #intro {
+               font-size: 120%;
+               margin: 0px;
+               font-weight: normal;
+               font-family: monospace;
+            }
+            #name {
+                font-size: 500%;
+                margin: 0px;
+            }
+            #who {
+                font-size: 400%;
+                margin: 0px;
+                color: var(--dark_text_pink_alt);
+                font-family: monospace;
+            }
+            #description {
+                font-size: 120%;
+                margin: 0px;
+                font-weight: normal;
+                color:var(--dark_text_pink_alt);
+                font-family: monospace;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="header">
+            <p>Header</p>
+        </div>  
+        <div>
+            <div id="left_menu">
+                <p>Left Menu</p>
+            </div>
+            <div id="right_menu">
+                <p>Left Menu</p>
+            </div>
+            <div id="content">
+                <div class="title">
+                    <p id="intro">Heyo! My name is</p>
+                    <p id="name">TriFoxie!</p>
+                    <p id="who">I do random stuff.</p>
+                    <p id="description">Sample text here.<br>With another line wow!</p>
+                </div>
+                <p>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>owo
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
