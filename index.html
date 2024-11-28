@@ -3,15 +3,24 @@
     <title>TriFoxie</title>
     <style>
         :root {
-            --dark_background_pink: #460046;
+            --background_pink: #460046;
 
-            --dark_text_pink: #ff90ff;
-            --dark_text_pink_alt: #994f99;
+            --text_pink: #ff90ff;
+            --dark_text_pink: #994f99;
+            --light_text_pink: #ffd6ff;
 
-            background-color: var(--dark_background_pink);
-            color: var(--dark_text_pink);
+            background-color: var(--background_pink);
+            color: var(--text_pink);
 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a, link {
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--light_text_pink);
+        }
+        .zoom:hover {
+            transform: scale(1.5);
         }
         #header {
             position: fixed;
@@ -24,22 +33,28 @@
             text-align: right;
         }
         #left_menu {
+            font-family: monospace;
+            font-size: 120%;
             position: fixed;
             top: 60%;
             left: 0;
+            width: 10%;
+            padding: 0% 3%;
             z-index: 998;
-            width: 10%;
-            text-align: left;
-            padding: 0% 3%;
+            writing-mode: vertical-lr;
+            text-orientation: upright;
         }
-        #right_menu {
+        #email_address {
+            font-family: monospace;
+            font-size: 120%;
             position: fixed;
-            top: 60%;
+            bottom: 0;
             right: 0;
-            z-index: 997;
             width: 10%;
-            text-align: right;
             padding: 0% 3%;
+            z-index: 998;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
         }
         #content {
             width: 60%;
@@ -62,14 +77,14 @@
             #who {
                 font-size: 400%;
                 margin: 0px;
-                color: var(--dark_text_pink_alt);
+                color: var(--dark_text_pink);
                 font-family: monospace;
             }
             #description {
                 font-size: 120%;
                 margin: 0px;
                 font-weight: normal;
-                color:var(--dark_text_pink_alt);
+                color:var(--dark_text_pink);
                 font-family: monospace;
             }
         }
@@ -84,8 +99,9 @@
             <div id="left_menu">
                 <p>Left Menu</p>
             </div>
-            <div id="right_menu">
-                <p>Left Menu</p>
+            <div id="email_address">
+                <div class="zoom"  style="float:left"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+                <p style="float:left">-----</p>
             </div>
             <div id="content">
                 <div class="title">
