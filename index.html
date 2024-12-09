@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>TriFoxie</title>
+    <title>Test</title>
     <script src="https://kit.fontawesome.com/5631b092be.js" crossorigin="anonymous"></script>
     <style>
         :root {
@@ -11,14 +11,25 @@
             --light_text_pink: #ffd6ff;
 
             background-color: var(--background_pink);
-            color: var(--text_pink);
+            color: var(--dark_text_pink);
 
             font-family: monospace;
+            font-size: 100%;
         }
         a, link {
             font-weight: bold;
             text-decoration: none;
             color: var(--light_text_pink);
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+            color:var(--text_pink)
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 120%;
         }
         .zoom{
             transition: transform .1s;
@@ -80,28 +91,71 @@
             margin: 10% 0px;
             padding: 0px 20%;
             text-align: left;
-        }
-        .title{
-            font-weight: bolder;
-            #intro {
-               font-size: 120%;
-               margin: 0px;
-               font-weight: normal;
+            .title{
+                font-weight: bolder;
+                #intro {
+                    font-size: 120%;
+                    margin: 0px;
+                    font-weight: normal;
+                    color: var(--light_text_pink);
+                }
+                #name {
+                    font-size: 500%;
+                    margin: 0px;
+                    color: var(--text_pink);
+                }
+                #who {
+                    font-size: 400%;
+                    margin: 0px;
+                    color: var(--dark_text_pink);
+                }
+                #description {
+                    font-size: 120%;
+                    margin: 0px;
+                    font-weight: normal;
+                    color:var(--dark_text_pink);
+                }
             }
-            #name {
-                font-size: 500%;
-                margin: 0px;
+            .contentBlock {
+                margin: 5% 0 0 0;
+                img{
+                    width:15%;
+                    margin:0.4%;
+                    border:2px solid var(--light_text_pink);
+                    border-radius: 5px;
+                }
+                img.left{
+                    float:left;
+                }
+                img.right{
+                    float:right;
+                }
             }
-            #who {
-                font-size: 400%;
-                margin: 0px;
-                color: var(--dark_text_pink);
+            .games {
+                margin: 5% 0 0 0;
+                h1 {
+                    text-align: center;
+                    border-bottom-style: solid;
+                    margin: 0 0 0.5% 0;
+                }
+                iframe {
+                    float:left;
+                    border-radius: 5%;
+                    border: 2px solid var(--light_text_pink)
+                }
             }
-            #description {
-                font-size: 120%;
-                margin: 0px;
-                font-weight: normal;
-                color:var(--dark_text_pink);
+            .jam_games {
+                margin: 5% 0 0 0;
+                h1 {
+                    text-align: center;
+                    border-bottom-style: solid;
+                    margin: 0 0 0.5% 0;
+                }
+                iframe {
+                    float:left;
+                    border-radius: 5%;
+                    border: 2px solid var(--light_text_pink)
+                }
             }
         }
     </style>
@@ -110,18 +164,27 @@
     <div>
         <div id="header">
             <i class="fas fa-3" style="position:fixed;top:0;left:0;padding:1%;scale:200%"></i>
-            <button>Say Hi</button>
+            <button>Button</button>
         </div>  
         <div>
             <div id="left_menu">
-                <div class="zoom">
-                    <i class="fa-brands fa-github" href="https://github.com/TriFoxie"></i>
+                <div style="position:fixed;bottom:1%;">
+                    <div class="zoom">
+                        <i class="fa-brands fa-github" href=""></i>
+                        <p>G</p>
+                    </div> 
                 </div>
-                <div class="zoom">
-                    <i class="fa-brands fa-discord"></i>
+                <div style="position:fixed;bottom:3%;">
+                    <div class="zoom">
+                        <i class="fa-brands fa-discord"></i>
+                        <p>D</p>
+                    </div>
                 </div>
-                <div class="zoom">
-                    <i class="fa-brands fa-youtube" href="https://youtube.com/@TriFoxie"></i>
+                <div style="position:fixed;bottom:5%;">
+                    <div class="zoom">
+                        <i class="fa-brands fa-youtube" href=""></i>
+                        <p>Y</p>
+                    </div>
                 </div>
             </div>
             <div id="email_address">
@@ -129,10 +192,22 @@
             </div>
             <div id="content">
                 <div class="title">
-                    <p id="intro">Heyo! My name is</p>
-                    <p id="name">TriFoxie!</p>
-                    <p id="who">I do random stuff.</p>
-                    <p id="description">Sample text here.<br>With another line wow!</p>
+                    <p id="intro">Heyo, I'm</p>
+                    <p id="name">TriFoxie</p>
+                    <p id="who">I make games</p>
+                    <p id="description">I'm an amateur game dev and mainly use Unity.<br>I also like to learn new languages and use them in projects.</p>
+                </div>
+                <div class="contentBlock">
+                    <h1>Content Block Title</h1>
+                    <img class="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/1200px-2ChocolateChipCookies.jpg"/>
+                    <p>Some super long text thing here. A a sd sajk d kkd ak sjd  ajskjsd sjkas dkasj dakjsd akjsd kaj sdkj aksjd sah akj dskjas dasjd akjs dkjas dakj asdad ak sjd  ajskjsd sjkas dkasj dakjsd akjsd kaj sdkj aksjd sah akj dskjas dasjd akjs dd ak sjd  ajskjsd sjkas dkasj dakjsd akjsd kaj sdkj aksjd sah akj dskjas dasjd akjs dd ak sjd  ajskjsd sjkas dkasj dakjsd akjsd kaj sdkj aksjd sah akj dskjas dasjd akjs dd ak sjd  ajskjsd sjkas dkasj dakjsd akjsd kaj sdkj aksjd sah akj dskjas dasjd akjs d</p>
+                </div>
+                <div class="games">
+                    <h1>Games</h1>
+                </div>
+                <div class="jam_games">
+                    <h1>Game Jams</h1>
+                    <iframe src="https://itch.io/embed/3161777?bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=333333" width="208" height="167"><a href="https://trifoxie.itch.io/mirrored">Mirrored by TriFoxie</a></iframe>
                 </div>
                 <p>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>owo
