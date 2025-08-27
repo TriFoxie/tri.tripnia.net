@@ -151,48 +151,39 @@
     }
 }
 #games {
-    margin: 0 4% 0 4%;
+    margin: 0 3% 0 3%;
+
+    h1 {
+        text-align: center;
+        border-bottom-style: solid;
+        margin: 0 0 0.5% 0;
+    }
+    iframe, img{
+        margin: 0 0.1%;
+        border-radius: 10px;
+        border: 2px solid var(--light_text);
+        width: 203px;
+        height: 167px;
+    }
+
     .games {
         margin: 5% 0 26% 0;
-        h1 {
-            text-align: center;
-            border-bottom-style: solid;
-            margin: 0 0 0.5% 0;
-        }
-        iframe {
-            float:left;
-            border-radius: 5%;
-            border: 2px solid var(--light_text)
-        }
     }
     .games_left {
         margin: 5% 0 26% 0;
         float: left;
         width: 49%;
-        h1 {
-            text-align: center;
-            border-bottom-style: solid;
-            margin: 0 0 0.5% 0;
-        }
-        iframe {
+        iframe, img{
             float:left;
-            border-radius: 5%;
-            border: 2px solid var(--light_text)
         }
     }
     .games_right {
         margin: 5% 0 26% 0;
         float: right;
         width: 49%;
-        h1 {
-            text-align: center;
-            border-bottom-style: solid;
-            margin: 0 0 0.5% 0;
-        }
-        iframe {
-            float:right;
-            border-radius: 5%;
-            border: 2px solid var(--light_text)
+        iframe, img{
+            float:center;
+            width: 100%;
         }
     }
 }
