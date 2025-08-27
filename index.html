@@ -1,210 +1,22 @@
 <!DOCTYPE html>
 <head>
     <title>TriFoxie</title>
+    <link id="stylesheet" rel="stylesheet" href=""/>
     <script src="https://kit.fontawesome.com/5631b092be.js" crossorigin="anonymous"></script>
-    <style>
-        :root {
-            --background_pink: #460046;
-
-            --text_pink: #ff90ff;
-            --dark_text_pink: #994f99;
-            --light_text_pink: #ffd6ff;
-
-            background-color: var(--background_pink);
-            color: var(--dark_text_pink);
-
-            font-family: monospace;
-            font-size: 100%;
-
-            h1{
-                    color: var(--text_pink);
-            }
-            h2{
-                color: var(--light_text_pink);
-                margin: 0;
-            }
+    <script>
+        let pageUrl = window.location.href;
+        let domain = "";
+        let local = false;
+        //Get stylesheet when local and pushed.
+        if(window.location.protocol == "file:"){
+            document.getElementById("stylesheet").href = "global.css";
+            local = true;
+        }else{
+            pageUrl = window.location.href;
+            domain = pageUrl.substring(0, pageUrl.indexOf("/", pageUrl.indexOf("//") + 2));
+            document.getElementById("stylesheet").href = domain + "/global.css";
         }
-        a, link {
-            font-weight: bold;
-            text-decoration: none;
-            color: var(--light_text_pink);
-        }
-        h1 {
-            margin: 0;
-            padding: 0;
-            color:var(--text_pink)
-        }
-        p {
-            margin: 0;
-            padding: 0;
-            font-size: 120%;
-        }
-        .zoom{
-            transition: transform .1s;
-        }
-        .zoom:hover {
-            transform: scale(1.1);
-        }
-        #header {
-            margin: auto;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            width: 94%;
-            padding: 1% 3%;
-            backdrop-filter: blur(8px);
-            text-align: right;
-            border-bottom: 1px solid var(--light_text_pink);
-
-            button {
-                background-color: var(--dark_text_pink);
-                color: var(--background_pink);
-                border: 2px solid var(--light_text_pink);
-                transform: rotate(2deg);
-                font-family:monospace;
-                font-weight: bold;
-                font-size: 200%;
-                padding: 0.1% 2%;
-                transition: transform .2s;
-            }
-            button:hover {
-                transform: rotate(0deg) scale(1.1);
-            }
-
-            #spot_playlist {
-                color:var(--light_text_pink); 
-                border-radius:12px;
-            }
-
-            #box_link_container {
-                position:fixed; 
-                top:5%; 
-                left:5%; 
-            }
-            .box_link {
-                width: 80px;
-                height: 80px;
-                border: 1px solid var(--light_text_pink);
-                border-radius: 15%;
-            }
-        }
-        #left_menu {
-            font-size: 120%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            padding: 0 0 1% 1% ;
-            z-index: 998;
-            writing-mode: vertical-lr;
-            text-orientation: upright;
-
-            p {
-                margin: 0%;
-            }
-        }
-        #email_address {
-            font-size: 120%;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            padding: 0 1% 1% 0 ;
-            z-index: 998;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-        #content {
-            margin: 10% 0px;
-            padding: 0px 20%;
-            text-align: left;
-            .title{
-                font-weight: bolder;
-                #intro {
-                    font-size: 120%;
-                    margin: 0px;
-                    font-weight: normal;
-                    color: var(--light_text_pink);
-                }
-                #name {
-                    font-size: 500%;
-                    margin: 0px;
-                    color: var(--text_pink);
-                }
-                #who {
-                    font-size: 400%;
-                    margin: 0px;
-                    color: var(--dark_text_pink);
-                }
-                #description {
-                    font-size: 120%;
-                    margin: 0px;
-                    font-weight: normal;
-                    color:var(--dark_text_pink);
-                }
-            }
-            .contentBlock {
-                margin: 5% 0 5% 0;
-                img{
-                    width:15%;
-                    margin:0.4%;
-                    border:2px solid var(--light_text_pink);
-                    border-radius: 5px;
-                }
-                img.left{
-                    float:left;
-                }
-                img.right{
-                    float:right;
-                }
-            }
-        }
-        #games {
-            margin: 0 4% 0 4%;
-            .games {
-                margin: 5% 0 26% 0;
-                h1 {
-                    text-align: center;
-                    border-bottom-style: solid;
-                    margin: 0 0 0.5% 0;
-                }
-                iframe {
-                    float:left;
-                    border-radius: 5%;
-                    border: 2px solid var(--light_text_pink)
-                }
-            }
-            .games_left {
-                margin: 5% 0 26% 0;
-                float: left;
-                width: 49%;
-                h1 {
-                    text-align: center;
-                    border-bottom-style: solid;
-                    margin: 0 0 0.5% 0;
-                }
-                iframe {
-                    float:left;
-                    border-radius: 5%;
-                    border: 2px solid var(--light_text_pink)
-                }
-            }
-            .games_right {
-                margin: 5% 0 26% 0;
-                float: right;
-                width: 49%;
-                h1 {
-                    text-align: center;
-                    border-bottom-style: solid;
-                    margin: 0 0 0.5% 0;
-                }
-                iframe {
-                    float:right;
-                    border-radius: 5%;
-                    border: 2px solid var(--light_text_pink)
-                }
-            }
-        }
-    </style>
+    </script>
 </head>
 <body>
     <div>
@@ -212,11 +24,11 @@
             <i class="fas fa-3" style="position:fixed;top:0;left:0;padding:1%;scale:200%"></i>
             <div id="box_link_container">
                 <iframe id="spot_playlist" class="box_link" src="https://open.spotify.com/embed/playlist/2H7afOJHdOqESjCkpVBLzU?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <img src="https://raw.githubusercontent.com/TriFoxie/tri.tripnia.net/refs/heads/main/Assets/Images/Placeholder.png" class="box_link"></img>
+                <img src="Assets/Images/Placeholder.png" class="box_link"></img>
             </div>
             <a href="https://trifoxie.itch.io"><button>Play</button></a>
         </div>  
-        <div>
+        <div id="side_menus">
             <div id="left_menu">
                 <div style="position:fixed;bottom:1%;">
                     <div class="zoom">
@@ -235,53 +47,62 @@
                     <h1></h1>
                 </div>
             </div>
-            <div id="email_address">
+            <div id="right_menu">
                 <div class="zoom"><a href="mailto:mcsbtx122+portfolio@gmail.com">mcsbtx122@gmail.com</a></div>
             </div>
-            <div id="content">
-                <div class="title">
-                    <p id="intro">Heyo, I'm</p>
-                    <p id="name">TriFoxie</p>
-                    <p id="who">I make games</p>
-                    <p id="description">I'm an amateur game dev and mainly use Unity.</p>
-                </div>
-                <div class="contentBlock">
-                    <h1>About Me</h1>
-                    <p>
-                        I'm an aspiring game and software developer, currently a student, and I am working on passion projects in my free time along with coursework.
-                        If I'm not working on a project, I will either be tinkering with custom home server technology, playing games with my friends, or out attempting to do cool tricks on my bike.
-                        I also like to learn new languages, tools and skills to use in my projects whenever I can.
-                    </p>
-                </div>
-                <div class="contentBlock">
-                    <h1>Qualifications</h1>
-                    <h2>Level 4 [WIP]</h2>
-                    <p>Applied for a degree in Computer Science at the University of Sussex.</p>
-                    <h2>Level 3 [WIP]</h2>
-                    <p>[x] Computer Science<br>[x] Mathematics<br>[x] Physics<br>[x] Music Technology</p>
-                    <h2>Level 2</h2>
-                    <p>Average grade 7 GCSEs (8)</p>
-                </div>
-                <div class="contentBlock">
-                    <h1>Trixie</h1>
-                    <img class="left" src="https://raw.githubusercontent.com/TriFoxie/tri.tripnia.net/refs/heads/main/Assets/Images/PFPTrixie.png"/>
-                    <img class="right" src="https://raw.githubusercontent.com/TriFoxie/tri.tripnia.net/refs/heads/main/Assets/Images/VRCTrixie.png"/>
-                    <p>This is my character for anything that needs one. D&D, video games, anything. She's called Trixie!<br><br><br><br><br><br></p>
-                </div>
+        </div>
+        <div id="content">
+            <div class="title">
+                <p id="intro">Heyo, I'm</p>
+                <p id="name">TriFoxie</p>
+                <p id="who">I make games</p>
+                <p id="description">I'm an amateur game dev and mainly use Unity.</p>
             </div>
-            <div id="games">
-                <div class="games">
-                    <h1>Projects</h1>
-                </div>
-                <div class="games_left">
-                    <h1>Game Jams</h1>
-                    <iframe src="https://itch.io/embed/3161777?bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=333333" width="208" height="167"><a href="https://trifoxie.itch.io/mirrored">Mirrored by TriFoxie</a></iframe>
-                </div>
-                <div class="games_right">
-                    <h1>Coursework</h1>
-                    <iframe frameborder="0" src="https://itch.io/embed/3431218?linkback=true&amp;bg_color=00e9fc&amp;fg_color=f9ff02&amp;link_color=ff390c&amp;border_color=ff5528" width="208" height="167"><a href="https://trifoxie.itch.io/pets">Super Tiny Pets by TriFoxie</a></iframe>
-                </div>
+            <div class="contentBlock">
+                <h1>About Me</h1>
+                <p>
+                    I'm an aspiring game and software developer, currently a student, and I am working on passion projects in my free time along with coursework.
+                    If I'm not working on a project, I will either be tinkering with custom home server technology, playing games with my friends, or out attempting to do cool tricks on my bike.
+                    I also like to learn new languages, tools and skills to use in my projects whenever I can.
+                </p>
+            </div>
+            <div class="contentBlock">
+                <h1>Qualifications</h1>
+                <h2>Level 4 [WIP]</h2>
+                <p>Computer Science at the <a href="https://www.sussex.ac.uk/">University of Sussex</a></p>
+                <h2>Level 3</h2>
+                <p>[B] Computer Science<br>[C] Mathematics<br>[C] Music Technology<br>[D] Physics</p>
+                <h2>Level 2</h2>
+                <p>Average grade 7 GCSEs (8)</p>
+            </div>
+            <div class="contentBlock">
+                <h1>Trixie</h1>
+                <img class="left" data-src="Assets/Images/PFPTrixie.png"/>
+                <img class="right" data-src="Assets/Images/VRCTrixie.png"/>
+                <p>This is my character for anything that needs one. D&D, video games, anything. She's called Trixie!<br><br><br><br><br><br></p>
+            </div>
+        </div>
+        <div id="games">
+            <div class="games">
+                <h1>Projects</h1>
+            </div>
+            <div class="games_left">
+                <h1>Game Jams</h1>
+                <iframe src="https://itch.io/embed/3161777?bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=333333" width="208" height="167"><a href="https://trifoxie.itch.io/mirrored">Mirrored by TriFoxie</a></iframe>
+            </div>
+            <div class="games_right">
+                <h1>Coursework</h1>
+                <iframe frameborder="0" src="https://itch.io/embed/3431218?linkback=true&amp;bg_color=00e9fc&amp;fg_color=f9ff02&amp;link_color=ff390c&amp;border_color=ff5528" width="208" height="167"><a href="https://trifoxie.itch.io/pets">Super Tiny Pets by TriFoxie</a></iframe>
             </div>
         </div>
     </div>
 </body>
+<script>
+    for (let img of document.querySelectorAll('img[data-src]')) {   
+        if(!local){
+            img.src = domain + "/" + img.dataset.src;
+        }else{
+            img.src = img.dataset.src;
+        }
+    }
+</script>
